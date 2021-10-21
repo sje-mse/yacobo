@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name BluePill)(type KiCad)(uri /home/sje/Documents/model-m-q)(options "")(descr "Blue Pill Breakout"))
+)
