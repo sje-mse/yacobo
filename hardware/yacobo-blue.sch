@@ -177,18 +177,14 @@ Wire Wire Line
 $Comp
 L power:+3.3V #PWR0108
 U 1 1 6151F53E
-P 4900 2000
-F 0 "#PWR0108" H 4900 1850 50  0001 C CNN
-F 1 "+3.3V" H 4915 2173 50  0000 C CNN
-F 2 "" H 4900 2000 50  0001 C CNN
-F 3 "" H 4900 2000 50  0001 C CNN
-	1    4900 2000
+P 5150 2400
+F 0 "#PWR0108" H 5150 2250 50  0001 C CNN
+F 1 "+3.3V" H 5165 2573 50  0000 C CNN
+F 2 "" H 5150 2400 50  0001 C CNN
+F 3 "" H 5150 2400 50  0001 C CNN
+	1    5150 2400
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	4650 2400 4900 2400
-Wire Wire Line
-	4900 2400 4900 2000
 Text GLabel 3000 2100 2    50   Input ~ 0
 USB+
 Text GLabel 3000 2200 2    50   Input ~ 0
@@ -207,10 +203,10 @@ USB+
 Wire Wire Line
 	3550 3000 3650 3000
 $Comp
-L Device:R R4
+L Device:R R3
 U 1 1 61532AE5
 P 5800 4300
-F 0 "R4" V 5800 4300 50  0000 C CNN
+F 0 "R3" V 5800 4300 50  0000 C CNN
 F 1 "120" V 5900 4300 50  0000 C CNN
 F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 5730 4300 50  0001 C CNN
 F 3 "~" H 5800 4300 50  0001 C CNN
@@ -228,10 +224,10 @@ led1
 Text GLabel 5500 4600 0    50   Input ~ 0
 led2
 $Comp
-L Device:R R5
+L Device:R R4
 U 1 1 6153B5CA
 P 5800 4400
-F 0 "R5" V 5800 4400 50  0000 C CNN
+F 0 "R4" V 5800 4400 50  0000 C CNN
 F 1 "120" V 5850 4200 50  0001 C CNN
 F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 5730 4400 50  0001 C CNN
 F 3 "~" H 5800 4400 50  0001 C CNN
@@ -239,10 +235,10 @@ F 3 "~" H 5800 4400 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Device:R R6
+L Device:R R5
 U 1 1 6153F10D
 P 5800 4600
-F 0 "R6" V 5800 4600 50  0000 C CNN
+F 0 "R5" V 5800 4600 50  0000 C CNN
 F 1 "120" V 5850 4400 50  0001 C CNN
 F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 5730 4600 50  0001 C CNN
 F 3 "~" H 5800 4600 50  0001 C CNN
@@ -413,15 +409,15 @@ col12
 Text GLabel 3550 2500 0    50   Input ~ 0
 col11
 Text GLabel 4750 2600 2    50   Input ~ 0
-col15
+led2
 Wire Wire Line
 	4650 2600 4750 2600
 Text GLabel 4750 2700 2    50   Input ~ 0
-led2
-Text GLabel 4750 2800 2    50   Input ~ 0
 led1
-Text GLabel 4750 2900 2    50   Input ~ 0
+Text GLabel 4750 2800 2    50   Input ~ 0
 led0
+Text GLabel 4750 2900 2    50   Input ~ 0
+row7
 Wire Wire Line
 	4650 2700 4750 2700
 Wire Wire Line
@@ -443,21 +439,21 @@ Wire Wire Line
 Wire Wire Line
 	3550 2800 3650 2800
 Text GLabel 4750 3700 2    50   Input ~ 0
-row0
+col15
 Text GLabel 4750 3600 2    50   Input ~ 0
-row1
+row0
 Text GLabel 4750 3500 2    50   Input ~ 0
-row2
+row1
 Text GLabel 4750 3400 2    50   Input ~ 0
-row3
+row2
 Text GLabel 4750 3300 2    50   Input ~ 0
-row4
+row3
 Text GLabel 4750 3200 2    50   Input ~ 0
-row5
+row4
 Text GLabel 4750 3100 2    50   Input ~ 0
-row6
+row5
 Text GLabel 4750 3000 2    50   Input ~ 0
-row7
+row6
 Wire Wire Line
 	4650 3000 4750 3000
 Wire Wire Line
@@ -482,4 +478,30 @@ Text GLabel 2850 1400 1    50   Input ~ 0
 D+Pullup
 Wire Wire Line
 	2850 1400 2850 1650
+Wire Wire Line
+	4650 2400 5150 2400
+$Comp
+L power:GND #PWR?
+U 1 1 6172F446
+P 4950 2050
+F 0 "#PWR?" H 4950 1800 50  0001 C CNN
+F 1 "GND" H 4955 1877 50  0000 C CNN
+F 2 "" H 4950 2050 50  0001 C CNN
+F 3 "" H 4950 2050 50  0001 C CNN
+	1    4950 2050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4650 2200 4700 2200
+Wire Wire Line
+	4700 2200 4700 1950
+Wire Wire Line
+	4700 1950 4950 1950
+Wire Wire Line
+	4950 1950 4950 2050
+Wire Wire Line
+	4650 2300 4700 2300
+Wire Wire Line
+	4700 2300 4700 2200
+Connection ~ 4700 2200
 $EndSCHEMATC
