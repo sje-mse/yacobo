@@ -1,4 +1,6 @@
-/* Copyright 2020 John Hawthorn
+/* Copyright 2021 Stephen Edwards
+ *
+ * Adapted from the Model H Project by Jonathan Hawthorn.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -13,6 +15,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 #include QMK_KEYBOARD_H
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {

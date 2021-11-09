@@ -1,4 +1,6 @@
-/* Copyright 2020 John Hawthorn
+/* Copyright 2021 Stephen Edwards
+ *
+ * Adapted from the Model H Project by Jonathan Hawthorn.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
