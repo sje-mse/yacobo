@@ -26,7 +26,7 @@ check out the above inspirations, as those represent more complete and professio
 The Blue Pill development board houses the STM32F103C8T6, which is to be flashed with QMK firmware.
 Blue Pills are very common, but can be sometimes difficult to source. One reliabe source is linked above.
 
-## Corrective Resistors:
+### Corrective Resistors:
 Many blue pills ship with incorrect USB D+ pullup resistances in R10. The correct resistance is 1.5 KOhm,
 which should be marked `152` on the resistor. Common incorrect resistances are 10 KOhm (marked `103`),
 or 4.7 KOhm (marked `472`). The `R0` spot on the Yacobo board can be populated with one of the following corrective
