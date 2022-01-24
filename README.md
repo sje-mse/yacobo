@@ -1,7 +1,7 @@
 # yacobo
 Yet Another Control Board for IBM Model M
 
-[!Yacobo Drop In](/pictures/drop-in.jpg)
+![Yacobo Drop In](/pictures/drop-in.jpg)
 
 ## Inspired by Others
 This project is inspired by the Model H project by John Hawthorn (www.modelh.club)
