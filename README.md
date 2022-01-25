@@ -231,7 +231,7 @@ Now that we have a QMK environment set up, it's time to start building and flash
 
 Possible example command:
 ```
-$ cp -r firmware ~/qmk_firmware/keyboards
+$ cp -r firmware ~/qmk_firmware/keyboards/yacobo
 ```
 
 **Step 1:** Build the desired keyboard and keymap.
