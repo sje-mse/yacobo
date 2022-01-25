@@ -165,4 +165,53 @@ In the case of of this board, the correct bootloader is `generic_boot20_pc13.bin
 Once we have gathered the required hardware, software, and firmware, we are ready to flash the
 bootloader.
 
+**Step 0:** Boot into Windows
+
+I would love to get the STM32CubePro software working on Linux. If anyone can get that working, please submit a PR!
+
+**Step 1:** Connect the ST-LINK V2 Emulator Device to the Blue Pill
+
+![ST-LINK V2 Plugged In](/pictures/stl-plugged-in.jpg)
+
+**Step 2:** Plug the ST-LINK V2 Emulator Device into a USB Port
+
+Also, make sure that both the `BOOT0` and `BOOT1` jumpers are in the 0 position on the Blue Pill.
+
+**Step 3:** Launch the STM32 ST-LINK Utility
+
+**Step 4:** Use the `Open File` menu option to load the firmware.
+
+![ST-LINK Software Open Firmware](/pictures/st-link-open.png)
+
+**Step 5:** Connect to the ST-Link Device.
+
+![ST-LINK Software Connect](/pictures/st-link-connect.png)
+
+**Important:** Press the "RESET" button on the Blue Pill just before clicking Connect.
+Connection must occur during a narrow boot window.
+
+![ST-LINK Software Connected](/pictures/st-link-connected.png)
+
+**Step 6:** Click the `Program` menu option under the `Target` menu.
+
+![ST-LINK Software Program](/pictures/st-link-program.png)
+
+**Step 7:** Click the `Start` button on the popup dialog.
+
+![ST-LINK Software Program Start](/pictures/st-link-program-start.png)
+
+**Step 8:** On completion, unplug the ST-LINK V2 Device.
+
+![ST-LINK Software Program Complete](/pictures/st-link-complete.png)
+
+The program will report that it lost connection with the target. This is normal.
+
+**Step 9:** Use the USB-Micro port on the Blue Pill to reconnect with the host computer.
+A notification may pop up about an unrecognized device. If so, press the reset button.
+Eventually, Windows should report the device as a "Maple Leaf 003" serial comms device.
+
+This is an artifact of the origins of the Blue Pill. The original Blue Pills
+were produced by a company named Maple under the product name "Leaf"
+The product line was discontinued, but the knockoffs lived on in the form of the Blue Pills.
+
 ### Flashing the QMK Firmware
