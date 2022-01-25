@@ -248,13 +248,16 @@ On Linux systems, you can use the `dmesg` command to check whether it has been s
 
 **Important**
 If your Linux distribution does not recognize the Blue Pill, you may have to copy the file
-`50-qmk.rules` into the proper `udev` directory. Possible example command:
+`50-qmk.rules` into the proper `udev` directory.
+
+Possible example command:
 ```
 $ sudo cp misc/50-qmk.rules /etc/udev/rules.d
 ```
 
-**Step 3:** Flash the firmware
-Possible command:
+**Step 3:** Flash the firmware.
+
+Possible example command:
 ```
 $ qmk flash -kb yacobo -km my_keymap
 ```
