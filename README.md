@@ -215,3 +215,75 @@ were produced by a company named Maple under the product name "Leaf"
 The product line was discontinued, but the knockoffs lived on in the form of the Blue Pills.
 
 ### Flashing the QMK Firmware
+Now that we have a functioning bootloader, we can flash our QMK firmware onto the STM32F103C8T6 on the Blue Pill.
+First, we should set up a QMK build environment. QMK is a rich and healthy project with many ways to program.
+
+**Author's Note:**
+I now direct the reader to QMK's excellent documentation for setting up their own build environment.
+I got this working on Linux Mint), but I encourage you to do what works best for you.
+
+> See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_tools) and the [make instructions](https://docs.qmk.fm/#/getting_started_make_guide) for more information. Brand new to QMK? Start with our [Complete Newbs Guide](https://docs.qmk.fm/#/newbs).
+
+Now that we have a QMK environment set up, it's time to start building and flashing.
+
+**Step 0:** Copy the contents of the `firmware` folder of this repo into a new directory under
+`qmk_firmware/keyboards` called `yacobo`.
+
+Possible example command:
+```
+$ cp -r firmware ~/qmk_firmware/keyboards
+```
+
+**Step 1:** Build the desired keyboard and keymap.
+
+Possible example command:
+```
+$ qmk compile -kb yacobo -km my_keymap
+```
+
+**Step 2:** Connect the Blue Pill to the host computer using the USB port
+
+On Linux systems, you can use the `dmesg` command to check whether it has been successfully connected.
+![dmesg Maple detected](/pictures/maple-detected.png)
+
+**Important**
+If your Linux distribution does not recognize the Blue Pill, you may have to copy the file
+`50-qmk.rules` into the proper `udev` directory. Possible example command:
+```
+$ sudo cp misc/50-qmk.rules /etc/udev/rules.d
+```
+
+**Step 3:** Flash the firmware
+Possible command:
+```
+$ qmk flash -kb yacobo -km my_keymap
+```
+Wait until the qmk starts printing out `...`, and then press the `RESET` button the Blue Pill.
+This will allow the flashing to commence.
+
+**Step 4** Unplug and replug the Blue Pill via USB
+
+If the flashing was successful, the os should recognize the Blue Pill as a keyboard controller!
+
+![dmesg Yacobo detected](/pictures/yacobo-detected.png)
+
+**Author's Note:**
+I recommend putting `RESET` somewhere in your keymap. That way, if you want to re-program your control board after
+reassembling your Model M case, you won't have to use your socket driver to open the case again. See
+`firmware/keymaps/sje/keymap.c` as an example.
+
+**Step 4:** Complete assembly!
+Remember to solder the Blue Pill with its USB Micro port facing to the right, **away** from the USB-B
+port on the Yacobo PCB:
+
+![Yacobo Comparison](/pictures/yacobo-2.jpg)
+
+## Completion
+
+The completed Yacobo Control Board can now be dropped right back into the case where the old one was.
+
+![Drop In](/pictures/drop-in.jpg)
+
+**Author's Note:**
+Since the Yacobo does not include the original's heavy grounding cable, a small piece of tape may be required
+to keep the PCB in place if it must endure a bumpy ride somewhere.
