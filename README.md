@@ -64,7 +64,7 @@ It is slightly more expensive than the average Blue Pill, but well worth it for 
 **Be careful** when selecting an alternative to the Blue Pill. Be sure that it is **pin-compatible**
 with the blue pill and contains the STM32F103C8T6 chip. For reference, here is the pin diagram for the Blue Pill:
 
-![Blue Pill Pin Diagram](/pictures/blue-pill-pin-diagram.jpg)
+![Blue Pill Pin Diagram](/pictures/blue-pill-diagram.jpg)
 
 #### WARNING
 There are other boards out there, which (confusingly) are
