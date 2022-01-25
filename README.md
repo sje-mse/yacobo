@@ -76,15 +76,25 @@ then plug in the usb cable!
 ## Blue Pill Flashing Guide
 Before the the yacobo firmware can be flashed to the STM32F103C8T6 on the blue pill, we must flash
 the chip with bootloader that enables USB programming. Fortunately, another project exists that provides
-such images:
+such images.
 
-![STM32duino bootloaders by rogerclarkemelbourne](https://github.com/rogerclarkmelbourne/STM32duino-bootloader)
+### The bootloader binaries
 
-### Picking the correct bootloader image
+Github user rogerclarkemelbourne provides the following repo:
+
+[STM32duino-bootloader](https://github.com/rogerclarkmelbourne/STM32duino-bootloader)
+
 Images are provided in the `binaries` and the `bootloader_only_binaries` folders. The images in the former folder
 also load a "blink" sketch onto the chips, which can be a nice way to check that the flashing process worked.
 
-WIP
+### Picking the correct bootloader image
+
+The correct bootloader binary follows the name format `generic_boot20_*.bin`, where `*` stands for the pin
+of the designated as the status LED. This can be determined by examining the front of the blue pill board.
+
+![Blue Pill Status LED](/pictures/blu-pill-led.jpg)
+
+In the case of of this board, the correct bootloader is `generic_boot20_pc13.bin`.
 
 ### Corrective Resistors:
 Many blue pills ship with incorrect USB D+ pullup resistances in R10. The correct resistance is 1.5 KOhm,
