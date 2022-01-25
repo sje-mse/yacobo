@@ -279,7 +279,7 @@ reassembling your Model M case, you won't have to use your socket driver to open
 Remember to solder the Blue Pill with its USB Micro port facing to the right, **away** from the USB-B
 port on the Yacobo PCB:
 
-![Yacobo Comparison](/pictures/yacobo-2.jpg)
+![Yacobo Comparison](/pictures/yacobo-2.png)
 
 ## Completion
 
