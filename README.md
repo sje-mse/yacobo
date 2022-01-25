@@ -264,7 +264,7 @@ $ qmk flash -kb yacobo -km my_keymap
 Wait until the qmk starts printing out `...`, and then press the `RESET` button the Blue Pill.
 This will allow the flashing to commence.
 
-**Step 4** Unplug and replug the Blue Pill via USB
+**Step 4:** Unplug and replug the Blue Pill via USB
 
 If the flashing was successful, the os should recognize the Blue Pill as a keyboard controller!
 
@@ -275,7 +275,7 @@ I recommend putting `RESET` somewhere in your keymap. That way, if you want to r
 reassembling your Model M case, you won't have to use your socket driver to open the case again. See
 `firmware/keymaps/sje/keymap.c` as an example.
 
-**Step 4:** Complete assembly!
+**Step 5:** Complete assembly!
 Remember to solder the Blue Pill with its USB Micro port facing to the right, **away** from the USB-B
 port on the Yacobo PCB:
 
