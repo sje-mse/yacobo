@@ -24,6 +24,15 @@ check out the above inspirations, as those represent more complete and professio
 - 2x[22 Ohm Resistor](https://www.digikey.com/en/products/detail/yageo/MFR-25FBF52-22R/9138099)
 - 1x[Blue Pill Development Board](https://www.amazon.com/Teyleten-Robot-Development-STM32F103C8T6-Learning/dp/B08THXZ6XK/ref=sr_1_3)
 
+### Corrective Resistors:
+Many blue pills ship with incorrect USB D+ pullup resistances in R10. The correct resistance is 1.5 KOhm,
+which should be marked `152` on the resistor. Common incorrect resistances are 10 KOhm (marked `103`),
+or 4.7 KOhm (marked `472`). The `R0` spot on the Yacobo board can be populated with one of the following corrective
+resistors to bring the equivalent resistence to the proper value of 1.5 KOhm:
+
+- 10 KOhm: [1.8 KOhm](https://www.digikey.com/en/products/detail/yageo/MFR-25FTE52-1K8/13921251)
+- 4.7 KOhm: [2.2 KOhm](https://www.digikey.com/en/products/detail/yageo/MFR-25FBF52-2K2/9138108)
+
 # The Blue Pill Development Board
 
 ![Blue Pill](/pictures/blue-pill.jpg)
@@ -46,7 +55,7 @@ That said, the Blue Pill presents several challenges, which we will address in t
    functional, but others do not contain the STM32F103C8T6 they advertise, and it can be impossible to
    spot the difference while sorting. Fortunately, there are some reputable sellers, one of which is linked above.
 3. Early Blue Pills ship with an incorrect USB pullup resistor. This can be corrected by following the instructions
-   found later in this README.
+   found earlier in this guide.
 
 ## The Black Pill
 There do exist successors to the Blue Pill that address **all three** of the challenges presented above.
@@ -74,16 +83,26 @@ Blue Pill has a Ground pin. It would be very dangerous to solder such a board to
 then plug in the usb cable!
 
 ## Blue Pill Flashing Guide
-Before the the yacobo firmware can be flashed to the STM32F103C8T6 on the blue pill, we must flash
-the chip with bootloader that enables USB programming. This requires that we procure three additional items:
+
+**IMPORTANT**
+There is not enough room in the Model M case to accommodate a removable configuration of the
+Blue Pill using standard socket headers, so the Blue Pill must be soldered directly to the PCB
+via its pin headers. For this reason, it is recommended that the Blue Pill be fully programmed
+before it is soldered to the PCB. That way, should the Blue Pill prove to be defective, it can
+be replaced without having to desolder 40 pins.
+
+Before the the yacobo firmware can be flashed to the STM32F103C8T6 on the Blue Pill, we must flash
+the chip with bootloader that enables USB programming. If we have acquired a Blue Pill (or equivalent)
+that already has such a bootloader, we can skip all the way down to the section labeled "Flashing the QMK Firmware".
+
+### The Bootloader
+Flashing the STM32F103C8T6 with a new bootloader requires that we procure three additional items:
 
 - Hardware: A ST-Link V2  Emulator Downloader Programmer
 - Software: STM32 ST-LINK Utility
 - Firmware: The bootloader binary
 
-Fortunately, another project exists that provides such images.
-
-### Hardware: ST-LINK V2 Emulator Downloader/Programmer Device
+#### Hardware: ST-LINK V2 Emulator Downloader/Programmer Device
 
 Official ST-LINK V2 hardware exists, but it's expensive and overkill for our purposes.
 Hobbiests use the common ST-LINK V2 Emulator Downloader/Programmer.
@@ -95,7 +114,7 @@ Ebay, etc, and will usually run around 10 USD. These devices are often bundled w
 which is convenient.
 
 The device should come with hookup wires. These wires connect the pins on the ST-LINK V2 device to the programming
-pins at rear of the Blue Pill labelled `3v3`, `SWIO`, `SWCLK`, and `GND`. (The exact labels may differ by manufacturer.)
+pins at rear of the Blue Pill labeled `3v3`, `SWIO`, `SWCLK`, and `GND`. (The exact labels may differ by manufacturer.)
 
 ![ST-LINK V2 Plugged In](/pictures/stl-plugged-in.jpg)
 
@@ -111,7 +130,7 @@ connector and examine the pins on the underlying circuit board:
 
 This particular unit appears to be accurate.
 
-### Software: STM32 ST-LINK Utility
+#### Software: STM32 ST-LINK Utility
 
 ST provides several pieces of software that are capable of programming the Blue Pill. I have had success with the
 free [STSW-LINK004](https://www.st.com/en/development-tools/stsw-link004.html).
@@ -125,7 +144,7 @@ does have Linux and MacOS versions. However, I have not been able to get it to d
 I suspect I am missing a `udev` rule. If anyone can get this working, please submit a PR against this file and to
 `/misc/50-qmk.rules`!
 
-### Firmware: The bootloader binaries
+#### Firmware: The bootloader binaries
 
 Github user rogerclarkemelbourne provides the following repo:
 
@@ -141,11 +160,9 @@ designated as the status LED. This can be determined by examining the front of t
 
 In the case of of this board, the correct bootloader is `generic_boot20_pc13.bin`.
 
-### Corrective Resistors:
-Many blue pills ship with incorrect USB D+ pullup resistances in R10. The correct resistance is 1.5 KOhm,
-which should be marked `152` on the resistor. Common incorrect resistances are 10 KOhm (marked `103`),
-or 4.7 KOhm (marked `472`). The `R0` spot on the Yacobo board can be populated with one of the following corrective
-resistors to bring the equivalent resistence to the proper value of 1.5 KOhm:
+#### Flashing the Bootloader
 
-- 10 KOhm: [1.8 KOhm](https://www.digikey.com/en/products/detail/yageo/MFR-25FTE52-1K8/13921251)
-- 4.7 KOhm: [2.2 KOhm](https://www.digikey.com/en/products/detail/yageo/MFR-25FBF52-2K2/9138108)
+Once we have gathered the required hardware, software, and firmware, we are ready to flash the
+bootloader.
+
+### Flashing the QMK Firmware
