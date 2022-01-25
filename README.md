@@ -92,7 +92,7 @@ also load a "blink" sketch onto the chips, which can be a nice way to check that
 The correct bootloader binary follows the name format `generic_boot20_*.bin`, where `*` stands for the pin
 of the designated as the status LED. This can be determined by examining the front of the blue pill board.
 
-![Blue Pill Status LED](/pictures/blu-pill-led.jpg)
+![Blue Pill Status LED](/pictures/blue-pill-led.jpg)
 
 In the case of of this board, the correct bootloader is `generic_boot20_pc13.bin`.
 
