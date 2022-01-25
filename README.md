@@ -75,10 +75,57 @@ then plug in the usb cable!
 
 ## Blue Pill Flashing Guide
 Before the the yacobo firmware can be flashed to the STM32F103C8T6 on the blue pill, we must flash
-the chip with bootloader that enables USB programming. Fortunately, another project exists that provides
-such images.
+the chip with bootloader that enables USB programming. This requires that we procure three additional items:
 
-### The bootloader binaries
+- Hardware: A ST-Link V2  Emulator Downloader Programmer
+- Software: STM32 ST-LINK Utility
+- Firmware: The bootloader binary
+
+Fortunately, another project exists that provides such images.
+
+### Hardware: ST-LINK V2 Emulator Downloader/Programmer Device
+
+Official ST-LINK V2 hardware exists, but it's expensive and overkill for our purposes.
+Hobbiests use the common ST-LINK V2 Emulator Downloader/Programmer.
+
+![ST-LINK V2 Device](/pictures/stl-device.jpg)
+
+Much like the Blue Pill itself, the market is flooded with them. They are easy to find on Amazon, AliExpress,
+Ebay, etc, and will usually run around 10 USD. These devices are often bundled with the Blue Pills themselves,
+which is convenient.
+
+The device should come with hookup wires. These wires connect the pins on the ST-LINK V2 device to the programming
+pins at rear of the Blue Pill labelled `3v3`, `SWIO`, `SWCLK`, and `GND`. (The exact labels may differ by manufacturer.)
+
+![ST-LINK V2 Plugged In](/pictures/stl-plugged-in.jpg)
+
+There are more than 4 pins on the ST-LINK V2 device. Fortunately, the pinouts on ST-LINK V2 are labeled.
+
+Unfortunately, much like the Blue Pill, some ST-LINK V2 devices are a little weird, and may have inaccurate pinout
+labels on their outer shell. It is easy to check this - simply pull the cover off in the direction of the USB
+connector and examine the pins on the underlying circuit board:
+
+![ST-LINK V2 Uncovered Top](/pictures/stl-uncovered-1.jpg)
+
+![ST-LINK V2 Uncovered Bottom](/pictures/stl-uncovered-2.jpg)
+
+This particular unit appears to be accurate.
+
+### Software: STM32 ST-LINK Utility
+
+ST provides several pieces of software that are capable of programming the Blue Pill. I have had success with the
+free [STSW-LINK004](https://www.st.com/en/development-tools/stsw-link004.html).
+
+This program appears to be Windows-only. I have not tried anything clever like running it through WINE,
+or through a virtualized instance of ReactOS.
+
+**PR Invitation:**
+The successor to this software, [STM32CubeProg](https://www.st.com/en/development-tools/stm32cubeprog.html),
+does have Linux and MacOS versions. However, I have not been able to get it to detect my ST-LINK V2 USB devices.
+I suspect I am missing a `udev` rule. If anyone can get this working, please submit a PR against this file and to
+`/misc/50-qmk.rules`!
+
+### Firmware: The bootloader binaries
 
 Github user rogerclarkemelbourne provides the following repo:
 
@@ -87,10 +134,8 @@ Github user rogerclarkemelbourne provides the following repo:
 Images are provided in the `binaries` and the `bootloader_only_binaries` folders. The images in the former folder
 also load a "blink" sketch onto the chips, which can be a nice way to check that the flashing process worked.
 
-### Picking the correct bootloader image
-
 The correct bootloader binary follows the name format `generic_boot20_*.bin`, where `*` stands for the pin
-of the designated as the status LED. This can be determined by examining the front of the blue pill board.
+designated as the status LED. This can be determined by examining the front of the blue pill board.
 
 ![Blue Pill Status LED](/pictures/blue-pill-led.jpg)
 
