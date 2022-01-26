@@ -64,8 +64,8 @@ There do exist successors to the Blue Pill that address **all three** of the cha
 2. They house legitimate STM32F103C8T6 ICs.
 3. They ship with the correct USB D+ pullup resistor.
 
-Some of these are called Black Pills. One Black Pill is supplied by [RobotDyn]
-(https://www.amazon.com/RobotDyn-BOOTLOADER-STM32F103C8T6-Development-Pinheaders/dp/B077SLHVNW).
+Some of these are called Black Pills. One Black Pill is supplied by
+[RobotDyn](https://www.amazon.com/RobotDyn-BOOTLOADER-STM32F103C8T6-Development-Pinheaders/dp/B077SLHVNW).
 
 It is slightly more expensive than the average Blue Pill, but well worth it for ease of use and peace of mind.
 
@@ -84,7 +84,7 @@ then plug in the usb cable!
 
 ## Blue Pill Flashing Guide
 
-**IMPORTANT**
+#### IMPORTANT
 There is not enough room in the Model M case to accommodate a removable configuration of the
 Blue Pill using standard socket headers, so the Blue Pill must be soldered directly to the PCB
 via its pin headers. For this reason, it is recommended that the Blue Pill be fully programmed
