@@ -208,10 +208,10 @@ The program will report that it lost connection with the target. This is normal.
 
 **Step 9:** Use the USB-Micro port on the Blue Pill to reconnect with the host computer.
 A notification may pop up about an unrecognized device. If so, press the reset button.
-Eventually, Windows should report the device as a "Maple Leaf 003" serial comms device.
+Eventually, Windows should report the device as a "Maple LLM 003" serial comms device.
 
 This is an artifact of the origins of the Blue Pill. The original Blue Pills
-were produced by a company named Maple under the product name "Leaf"
+were produced by a company named LeafLabs under the product name "Maple"
 The product line was discontinued, but the knockoffs lived on in the form of the Blue Pills.
 
 ### Flashing the QMK Firmware
