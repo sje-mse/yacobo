@@ -24,6 +24,11 @@ check out the above inspirations, as those represent more complete and professio
 - 2x[22 Ohm Resistor](https://www.digikey.com/en/products/detail/yageo/MFR-25FBF52-22R/9138099)
 - 1x[Blue Pill Development Board](https://www.amazon.com/Teyleten-Robot-Development-STM32F103C8T6-Learning/dp/B08THXZ6XK/ref=sr_1_3)
 
+If your model m membrane uses a single 12-terminal ribbon for both the matrix rows and the LEDs, use the following
+part instead of the 8- and 4- Position Ribbon Connectors:
+
+- 1x[12 Position Ribbon Connector](https://www.digikey.com/en/products/detail/te-connectivity-amp-connectors/5-520315-8/688639)
+
 ### Corrective Resistors:
 Many blue pills ship with incorrect USB D+ pullup resistances in R10. The correct resistance is 1.5 KOhm,
 which should be marked `152` on the resistor. Common incorrect resistances are 10 KOhm (marked `103`),
@@ -53,12 +58,12 @@ That said, the Blue Pill presents several challenges, which we will address in t
    This can be addressed using instructions found later in this README.
 2. For some reason, there are many counterfeit Blue Pills on the market. Some of these are perfectly
    functional, but others do not contain the STM32F103C8T6 they advertise, and it can be impossible to
-   spot the difference while sorting. Fortunately, there are some reputable sellers, one of which is linked above.
+   spot the difference while sourcing. Fortunately, there are some reputable sellers, one of which is linked above.
 3. Early Blue Pills ship with an incorrect USB pullup resistor. This can be corrected by following the instructions
    found earlier in this guide.
 
 ## The Black Pill
-There do exist successors to the Blue Pill that address **all three** of the challenges presented above.
+There do exist successors to the Blue Pill that theoretically address **all three** of the challenges presented above.
 
 1. They ship with a bootloader which enables USB programming.
 2. They house legitimate STM32F103C8T6 ICs.
@@ -67,7 +72,7 @@ There do exist successors to the Blue Pill that address **all three** of the cha
 Some of these are called Black Pills. One Black Pill is supplied by
 [RobotDyn](https://www.amazon.com/RobotDyn-BOOTLOADER-STM32F103C8T6-Development-Pinheaders/dp/B077SLHVNW).
 
-It is slightly more expensive than the average Blue Pill, but well worth it for ease of use and peace of mind.
+I have not yet acquired or tested this option. If you do, please submit a PR to this README.
 
 ### Selecting an Alternative
 **Be careful** when selecting an alternative to the Blue Pill. Be sure that it is **pin-compatible**
@@ -83,13 +88,6 @@ Blue Pill has a Ground pin. It would be very dangerous to solder such a board to
 then plug in the usb cable!
 
 ## Blue Pill Flashing Guide
-
-#### IMPORTANT
-There is not enough room in the Model M case to accommodate a removable configuration of the
-Blue Pill using standard socket headers, so the Blue Pill must be soldered directly to the PCB
-via its pin headers. For this reason, it is recommended that the Blue Pill be fully programmed
-before it is soldered to the PCB. That way, should the Blue Pill prove to be defective, it can
-be replaced without having to desolder 40 pins.
 
 Before the the yacobo firmware can be flashed to the STM32F103C8T6 on the Blue Pill, we must flash
 the chip with bootloader that enables USB programming. If we have acquired a Blue Pill (or equivalent)
@@ -238,7 +236,7 @@ $ cp -r firmware ~/qmk_firmware/keyboards/yacobo
 
 Possible example command:
 ```
-$ qmk compile -kb yacobo -km my_keymap
+$ qmk compile -kb yacobo -km default
 ```
 
 **Step 2:** Connect the Blue Pill to the host computer using the USB port
@@ -259,7 +257,7 @@ $ sudo cp misc/50-qmk.rules /etc/udev/rules.d
 
 Possible example command:
 ```
-$ qmk flash -kb yacobo -km my_keymap
+$ qmk flash -kb yacobo -km default
 ```
 Wait until the qmk starts printing out `...`, and then press the `RESET` button the Blue Pill.
 This will allow the flashing to commence.
@@ -280,6 +278,16 @@ Remember to solder the Blue Pill with its USB Micro port facing to the right, **
 port on the Yacobo PCB:
 
 ![Yacobo Comparison](/pictures/yacobo-2.png)
+
+#### IMPORTANT
+There is not enough room in the Model M case to accommodate a removable configuration of the
+Blue Pill using standard socket headers, so the Blue Pill must be soldered directly to the PCB
+via its pin headers. For this reason, it is recommended that the Blue Pill be fully programmed
+before it is soldered to the PCB. That way, should the Blue Pill prove to be defective, it can
+be replaced without having to desolder 40 pins. (If the Blue Pill shipped with an incorrect resistor,
+it cannot be flashed with QMK via USB until the resistance is corrected. In this case,
+flash the bootloader before soldering to the PCB where the resistance can be corrected.
+If the bootloader successfully flashes, there is a good chance that the firmware will work as well.)
 
 ## Completion
 
