@@ -24,10 +24,10 @@ check out the above inspirations, as those represent more complete and professio
 - 2x[22 Ohm Resistor](https://www.digikey.com/en/products/detail/yageo/MFR-25FBF52-22R/9138099)
 - 1x[Blue Pill Development Board](https://www.amazon.com/Teyleten-Robot-Development-STM32F103C8T6-Learning/dp/B08THXZ6XK/ref=sr_1_3)
 
-If your model m membrane uses a single 12-terminal ribbon for both the matrix rows and the LEDs, use the following
-part instead of the 8- and 4- Position Ribbon Connectors:
+If your Model M membrane uses a single 12-terminal ribbon for both the matrix rows and the LEDs, use the following
+part instead of the 8- and 4-Position Ribbon Connectors:
 
-- 1x[12 Position Ribbon Connector](https://www.digikey.com/en/products/detail/te-connectivity-amp-connectors/5-520315-8/688639)
+- 1x[12 Position Ribbon Connector](https://www.digikey.com/en/products/detail/te-connectivity-amp-connectors/6-520315-2/1137020)
 
 ### Corrective Resistors:
 Many blue pills ship with incorrect USB D+ pullup resistances in R10. The correct resistance is 1.5 KOhm,
