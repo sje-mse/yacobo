@@ -36,28 +36,6 @@ F 3 "~" H 6250 2300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector_Generic:Conn_01x08 J3
-U 1 1 614D7C81
-P 6250 3600
-F 0 "J3" H 6330 3592 50  0000 L CNN
-F 1 "rows" H 6330 3501 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical" H 6330 3455 50  0001 L CNN
-F 3 "~" H 6250 3600 50  0001 C CNN
-	1    6250 3600
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector_Generic:Conn_01x04 J4
-U 1 1 614D8BAD
-P 6250 4400
-F 0 "J4" H 6330 4392 50  0000 L CNN
-F 1 "leds" H 6330 4301 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 6250 4400 50  0001 C CNN
-F 3 "~" H 6250 4400 50  0001 C CNN
-	1    6250 4400
-	1    0    0    -1  
-$EndComp
-$Comp
 L Connector:USB_B J1
 U 1 1 614F087C
 P 1800 2100
@@ -202,70 +180,6 @@ Text GLabel 3550 3000 0    50   Input ~ 0
 USB+
 Wire Wire Line
 	3550 3000 3650 3000
-$Comp
-L Device:R R3
-U 1 1 61532AE5
-P 5800 4300
-F 0 "R3" V 5800 4300 50  0000 C CNN
-F 1 "120" V 5900 4300 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 5730 4300 50  0001 C CNN
-F 3 "~" H 5800 4300 50  0001 C CNN
-	1    5800 4300
-	0    -1   -1   0   
-$EndComp
-Text GLabel 5500 4300 0    50   Input ~ 0
-led0
-Wire Wire Line
-	5500 4300 5650 4300
-Wire Wire Line
-	5950 4300 6050 4300
-Text GLabel 5500 4400 0    50   Input ~ 0
-led1
-Text GLabel 5500 4600 0    50   Input ~ 0
-led2
-$Comp
-L Device:R R4
-U 1 1 6153B5CA
-P 5800 4400
-F 0 "R4" V 5800 4400 50  0000 C CNN
-F 1 "120" V 5850 4200 50  0001 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 5730 4400 50  0001 C CNN
-F 3 "~" H 5800 4400 50  0001 C CNN
-	1    5800 4400
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:R R5
-U 1 1 6153F10D
-P 5800 4600
-F 0 "R5" V 5800 4600 50  0000 C CNN
-F 1 "120" V 5850 4400 50  0001 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 5730 4600 50  0001 C CNN
-F 3 "~" H 5800 4600 50  0001 C CNN
-	1    5800 4600
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	5950 4400 6050 4400
-Wire Wire Line
-	5500 4400 5650 4400
-Wire Wire Line
-	5500 4600 5650 4600
-Wire Wire Line
-	5950 4600 6050 4600
-$Comp
-L power:+3.3V #PWR0109
-U 1 1 61543ECE
-P 5050 4500
-F 0 "#PWR0109" H 5050 4350 50  0001 C CNN
-F 1 "+3.3V" H 5065 4673 50  0000 C CNN
-F 2 "" H 5050 4500 50  0001 C CNN
-F 3 "" H 5050 4500 50  0001 C CNN
-	1    5050 4500
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5050 4500 6050 4500
 Text GLabel 5900 1600 0    50   Input ~ 0
 col0
 Text GLabel 5900 1700 0    50   Input ~ 0
@@ -504,4 +418,118 @@ Wire Wire Line
 Wire Wire Line
 	4700 2300 4700 2200
 Connection ~ 4700 2200
+$Comp
+L Connector_Generic:Conn_01x12 J3
+U 1 1 614D7C81
+P 6250 3800
+F 0 "J3" H 6330 3792 50  0000 L CNN
+F 1 "rows" H 6330 3701 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x12_P2.54mm_Vertical" H 6330 3655 50  0001 L CNN
+F 3 "~" H 6250 3800 50  0001 C CNN
+	1    6250 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x04 J4
+U 1 1 614D8BAD
+P 6250 4800
+F 0 "J4" H 6330 4792 50  0000 L CNN
+F 1 "leds" H 6330 4701 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 6250 4800 50  0001 C CNN
+F 3 "~" H 6250 4800 50  0001 C CNN
+	1    6250 4800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6050 4400 6000 4400
+Wire Wire Line
+	6000 4400 6000 4700
+Wire Wire Line
+	6000 4700 6050 4700
+Connection ~ 6000 4700
+Wire Wire Line
+	6050 4300 5900 4300
+Wire Wire Line
+	5900 4300 5900 4800
+Wire Wire Line
+	5900 4800 6050 4800
+Connection ~ 5900 4800
+Wire Wire Line
+	6050 4200 5800 4200
+Wire Wire Line
+	5800 4200 5800 4900
+Wire Wire Line
+	5800 4900 6050 4900
+$Comp
+L Device:R R3
+U 1 1 61532AE5
+P 5500 4700
+F 0 "R3" V 5500 4700 50  0000 C CNN
+F 1 "120" V 5600 4700 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 5430 4700 50  0001 C CNN
+F 3 "~" H 5500 4700 50  0001 C CNN
+	1    5500 4700
+	0    -1   -1   0   
+$EndComp
+Text GLabel 5200 4700 0    50   Input ~ 0
+led0
+Wire Wire Line
+	5200 4700 5350 4700
+Text GLabel 5200 4800 0    50   Input ~ 0
+led1
+Text GLabel 5200 5000 0    50   Input ~ 0
+led2
+$Comp
+L Device:R R4
+U 1 1 6153B5CA
+P 5500 4800
+F 0 "R4" V 5500 4800 50  0000 C CNN
+F 1 "120" V 5550 4600 50  0001 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 5430 4800 50  0001 C CNN
+F 3 "~" H 5500 4800 50  0001 C CNN
+	1    5500 4800
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R5
+U 1 1 6153F10D
+P 5500 5000
+F 0 "R5" V 5500 5000 50  0000 C CNN
+F 1 "120" V 5550 4800 50  0001 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 5430 5000 50  0001 C CNN
+F 3 "~" H 5500 5000 50  0001 C CNN
+	1    5500 5000
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	5200 4800 5350 4800
+Wire Wire Line
+	5200 5000 5350 5000
+$Comp
+L power:+3.3V #PWR0109
+U 1 1 61543ECE
+P 4750 4900
+F 0 "#PWR0109" H 4750 4750 50  0001 C CNN
+F 1 "+3.3V" H 4765 5073 50  0000 C CNN
+F 2 "" H 4750 4900 50  0001 C CNN
+F 3 "" H 4750 4900 50  0001 C CNN
+	1    4750 4900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5650 4700 6000 4700
+Wire Wire Line
+	5650 4800 5900 4800
+Wire Wire Line
+	5700 4100 5700 5000
+Wire Wire Line
+	5700 4100 6050 4100
+Wire Wire Line
+	5650 5000 5700 5000
+Wire Wire Line
+	5700 5000 6050 5000
+Connection ~ 5700 5000
+Wire Wire Line
+	5800 4900 4750 4900
+Connection ~ 5800 4900
 $EndSCHEMATC
