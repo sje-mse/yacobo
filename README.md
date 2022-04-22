@@ -1,6 +1,8 @@
 # yacobo
 Yet Another Control Board for IBM Model M
 
+![Yacobo CAD](/pictures/yacobo-cad.png)
+
 ![Yacobo Assembled](/pictures/yacobo-1.png)
 
 ## Inspired by Others
@@ -11,9 +13,9 @@ the only modifications are the pinouts and the keymaps, as well as some other
 changes to keep it building against the tip of QMK.
 
 ## Purpose
-The purpose of this project is to provide drop-in replacement Model M board with modern QMK firmware that users can
-source, solder, and program themselves. If said goals are not important to user, they should definitely
-check out the above inspirations, as those represent more complete and professional products.
+The purpose of this project is to provide a drop-in replacement Model M control board with modern QMK firmware
+that users can source, solder, and program themselves. If said goals are not important to user, they should
+definitely check out the above inspirations, as those represent more complete and professional products.
 
 ## Components:
 - 1x[16 Position Ribbon Connector](https://www.digikey.com/en/products/detail/te-connectivity-amp-connectors/6-520415-6/2294505)
