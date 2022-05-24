@@ -3,7 +3,7 @@ Yet Another Control Board for IBM Model M
 
 ![Yacobo CAD](/pictures/yacobo-cad.png)
 
-![Yacobo Assembled](/pictures/yacobo-1.png)
+![Yacobo Assembled](/pictures/populated-unpopulated-1-1.jpg)
 
 ## Inspired by Others
 This project is inspired by the Model H project by John Hawthorn (www.modelh.club)
