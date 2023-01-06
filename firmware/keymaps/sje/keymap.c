@@ -19,10 +19,6 @@
 #define _______ KC_TRNS
 #endif
 
-#ifndef KC_RST
-#define KC_RST RESET
-#endif
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT( /* Base layer */
     KC_ESC,           KC_F1,  KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,    KC_PSCR, KC_SCROLL_LOCK, KC_PAUS,
@@ -33,7 +29,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_LCTL,          KC_LALT,                           KC_SPC,                                      KC_RALT,          KC_RCTL,   KC_LEFT, KC_DOWN, KC_RGHT,   KC_P0,            KC_PDOT
   ),
   [1] = LAYOUT( /* Function layer */
-    _______,          KC_MUTE, KC_VOLD, KC_VOLU, _______, KC_RST,  _______, _______, _______, _______, KC_MUTE,  KC_VOLD, KC_VOLU, _______, _______, _______,
+    _______,          KC_MUTE, KC_VOLD, KC_VOLU, _______, QK_BOOT,  _______, _______, _______, _______, KC_MUTE,  KC_VOLD, KC_VOLU, _______, _______, _______,
     _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  _______,  _______, KC_DEL,  _______, _______, _______,  KC_CAPS, _______, _______, _______,
     _______, _______, KC_UP,   _______, _______, _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END, _______, _______, _______, KC_INS,  _______, _______, _______,  _______, _______, _______, _______,
     MO(1),   KC_LEFT, KC_DOWN, KC_RIGHT, _______, _______, KC_LEFT, KC_DOWN, KC_UP,  KC_RIGHT, _______, _______, _______, _______,                             _______, _______, _______,
