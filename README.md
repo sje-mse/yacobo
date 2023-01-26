@@ -6,8 +6,8 @@ Yet Another Control Board for IBM Model M
 ![Yacobo Assembled](/pictures/populated-unpopulated-1-1.jpg)
 
 ## Inspired by Others
-This project is inspired by the Model H project by John Hawthorn (www.modelh.club)
-and the LevelOneTechs Model M boards (https://levelonetechs.com).
+This project is inspired by the Model H project by John Hawthorn (https://modelh.club/)
+and the LevelOneTechs Model M boards (https://level1techs.com/).
 Additionally, the firmware in largely adapted from the Model H -
 the only modifications are the pinouts and the keymaps, as well as some other
 changes to keep it building against the tip of QMK.

@@ -26,14 +26,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define STATUS_LED C13
 
-/* USB Device descriptor parameter */
-#define VENDOR_ID    0xFEED
-#define PRODUCT_ID   0xB155
-#define DEVICE_VER   0x0100
-#define MANUFACTURER YACoBo
-#define PRODUCT      Model M Keyboard
-#define DESCRIPTION  QMK USB controller for Model M keyboards
-
 /* key matrix size */
 #define MATRIX_ROWS 8
 #define MATRIX_COLS 16
@@ -50,7 +42,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #define MATRIX_ROW_PINS { A1, A2, A3, A4, A5, A6, A7, B0 }
 #define MATRIX_COL_PINS { B9, B8, B7, B6, B5, B4, B3, A15, A10, A9, A8, B15, B14, B13, B12, A0 }
-#define UNUSED_PINS
 
 /* COL2ROW, ROW2COL */
 #define DIODE_DIRECTION COL2ROW
@@ -91,10 +82,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define NO_ACTION_LAYER
 //#define NO_ACTION_TAPPING
 //#define NO_ACTION_ONESHOT
-
-/* disable these deprecated features by default */
-#define NO_ACTION_MACRO
-#define NO_ACTION_FUNCTION
 
 /* Bootmagic Lite key configuration */
 //#define BOOTMAGIC_LITE_ROW 0
