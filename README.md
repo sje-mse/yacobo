@@ -24,7 +24,7 @@ definitely check out the above inspirations, as those represent more complete an
 - 1x[USB B Connector](https://www.digikey.com/en/products/detail/on-shore-technology-inc/USB-B1HSB6/2677744)
 - 3x[120 Ohm Resistor](https://www.digikey.com/en/products/detail/yageo/MFR-25FBF52-120R/9138050)
 - 2x[22 Ohm Resistor](https://www.digikey.com/en/products/detail/yageo/MFR-25FBF52-22R/9138099)
-- 1x[Blue Pill Development Board](https://www.amazon.com/Teyleten-Robot-Development-STM32F103C8T6-Learning/dp/B08THXZ6XK/ref=sr_1_3)
+- 1xBlue Pill Development Board
 
 If your Model M membrane uses a single 12-terminal ribbon for both the matrix rows and the LEDs, use the following
 part instead of the 8- and 4-Position Ribbon Connectors:
@@ -60,34 +60,15 @@ That said, the Blue Pill presents several challenges, which we will address in t
    This can be addressed using instructions found later in this README.
 2. For some reason, there are many counterfeit Blue Pills on the market. Some of these are perfectly
    functional, but others do not contain the STM32F103C8T6 they advertise, and it can be impossible to
-   spot the difference while sourcing. Fortunately, there are some reputable sellers, one of which is linked above.
+   spot the difference while sourcing.
 3. Early Blue Pills ship with an incorrect USB pullup resistor. This can be corrected by following the instructions
    found earlier in this guide.
-
-## The Black Pill
-There do exist successors to the Blue Pill that theoretically address **all three** of the challenges presented above.
-
-1. They ship with a bootloader which enables USB programming.
-2. They house legitimate STM32F103C8T6 ICs.
-3. They ship with the correct USB D+ pullup resistor.
-
-Some of these are called Black Pills. One Black Pill is supplied by
-[RobotDyn](https://www.amazon.com/RobotDyn-BOOTLOADER-STM32F103C8T6-Development-Pinheaders/dp/B077SLHVNW).
-
-I have not yet acquired or tested this option. If you do, please submit a PR to this README.
 
 ### Selecting an Alternative
 **Be careful** when selecting an alternative to the Blue Pill. Be sure that it is **pin-compatible**
 with the blue pill and contains the STM32F103C8T6 chip. For reference, here is the pin diagram for the Blue Pill:
 
 ![Blue Pill Pin Diagram](/pictures/blue-pill-diagram.jpg)
-
-#### WARNING
-There are other boards out there, which (confusingly) are
-**also** called Black Pills which contain newer STM32F4xx series chips. These are not yet supported by QMK, and
-(more importantly) are **not** pin-compatible with the Blue Pills. In fact, one of them has a 5V pin where the
-Blue Pill has a Ground pin. It would be very dangerous to solder such a board to the Yacobo PCB and to
-then plug in the usb cable!
 
 ## Blue Pill Flashing Guide
 
