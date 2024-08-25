@@ -203,15 +203,9 @@ I got this working on Linux Mint), but I encourage you to do what works best for
 
 > See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_tools) and the [make instructions](https://docs.qmk.fm/#/getting_started_make_guide) for more information. Brand new to QMK? Start with our [Complete Newbs Guide](https://docs.qmk.fm/#/newbs).
 
-Now that we have a QMK environment set up, it's time to start building and flashing.
+**NEWS**
 
-**Step 0:** Copy the contents of the `firmware` folder of this repo into a new directory under
-`qmk_firmware/keyboards` called `yacobo`.
-
-Possible example command:
-```
-$ cp -r firmware ~/qmk_firmware/keyboards/yacobo
-```
+yacobo has been accepted into the qmk/firmware repo! It can be found in `keyboards/ibm/model_m/yacobo`.
 
 **Step 1:** Build the desired keyboard and keymap.
 
