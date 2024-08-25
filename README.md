@@ -113,17 +113,15 @@ This particular unit appears to be accurate.
 
 #### Software: STM32 ST-LINK Utility
 
+##### Windows
 ST provides several pieces of software that are capable of programming the Blue Pill. I have had success with the
 free [STSW-LINK004](https://www.st.com/en/development-tools/stsw-link004.html).
 
-This program appears to be Windows-only. I have not tried anything clever like running it through WINE,
-or through a virtualized instance of ReactOS.
-
-**PR Invitation:**
-The successor to this software, [STM32CubeProg](https://www.st.com/en/development-tools/stm32cubeprog.html),
-does have Linux and MacOS versions. However, I have not been able to get it to detect my ST-LINK V2 USB devices.
-I suspect I am missing a `udev` rule. If anyone can get this working, please submit a PR against this file and to
-`/misc/50-qmk.rules`!
+##### Linux
+ST-Link V2 can be used to program Blue Pills on Linux. For Ubuntu:
+```
+apt install --yes stm32flash libstlink1 libstlink-dev stlink-gui stlink-tools
+```
 
 #### Firmware: The bootloader binaries
 
